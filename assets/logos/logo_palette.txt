@@ -1,0 +1,31 @@
+- Tailwind
+
+{ 'plum_(web)': { DEFAULT: '#F3A8E4', 100: '#490a3c', 200: '#911478', 300: '#da1eb4', 400: '#e961ce', 500: '#f3a8e4', 600: '#f6bbea', 700: '#f8ccef', 800: '#faddf4', 900: '#fdeefa' }, 'light_sky_blue': { DEFAULT: '#9ED6FF', 100: '#003053', 200: '#0060a5', 300: '#0091f8', 400: '#4bb4ff', 500: '#9ed6ff', 600: '#b1dfff', 700: '#c5e7ff', 800: '#d8efff', 900: '#ecf7ff' }, 'tea_green': { DEFAULT: '#C1ED9D', 100: '#25420c', 200: '#498518', 300: '#6ec725', 400: '#96e15a', 500: '#c1ed9d', 600: '#cdf0b0', 700: '#d9f4c4', 800: '#e6f8d7', 900: '#f2fbeb' } }
+
+- CSV
+
+F3A8E4,9ED6FF,C1ED9D
+
+- With #
+
+#F3A8E4, #9ED6FF, #C1ED9D
+
+- Array
+
+["F3A8E4","9ED6FF","C1ED9D"]
+
+- Object
+
+{"Plum (web)":"F3A8E4","Light Sky Blue":"9ED6FF","Tea green":"C1ED9D"}
+
+- Extended Array
+
+[{"name":"Plum (web)","hex":"F3A8E4","rgb":[243,168,228],"cmyk":[0,31,6,5],"hsb":[312,31,95],"hsl":[312,76,81],"lab":[78,37,-19]},{"name":"Light Sky Blue","hex":"9ED6FF","rgb":[158,214,255],"cmyk":[38,16,0,0],"hsb":[205,38,100],"hsl":[205,100,81],"lab":[83,-8,-26]},{"name":"Tea green","hex":"C1ED9D","rgb":[193,237,157],"cmyk":[19,0,34,7],"hsb":[93,34,93],"hsl":[93,69,77],"lab":[89,-28,34]}]
+
+- XML
+
+<palette>
+  <color name="Plum (web)" hex="F3A8E4" r="243" g="168" b="228" />
+  <color name="Light Sky Blue" hex="9ED6FF" r="158" g="214" b="255" />
+  <color name="Tea green" hex="C1ED9D" r="193" g="237" b="157" />
+</palette>
