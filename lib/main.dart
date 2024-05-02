@@ -2,9 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:interfaz_siiee/features/user_auth/presentation/pages/login_page.dart';
-import 'package:interfaz_siiee/features/app/splash_screen/splash_screen.dart';
 import 'package:interfaz_siiee/features/user_auth/presentation/pages/sing_up_page.dart';
 import 'package:interfaz_siiee/pages/home.dart';
+import 'package:interfaz_siiee/features/widget_tree/widget_tree.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,14 +32,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/home':(context) => const HomePage(),
-        '/login':(context) => const LoginPage(),
-        '/signup':(context) => const SignUpPage(),
+        '/home': (context) => HomePage(),
+        '/login': (context) => const LoginPage(),
+        '/signup': (context) => const SignUpPage(),
       },
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: const SplashScreen(
-        child: LoginPage(),
-      ),
+      home: const WidgetTree(),
     );
   }
 }

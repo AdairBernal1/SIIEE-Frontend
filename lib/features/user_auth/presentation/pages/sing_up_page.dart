@@ -41,7 +41,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: const MyAppBar(),
+        appBar: MyAppBar(),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(60.0),

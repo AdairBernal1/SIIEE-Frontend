@@ -2,17 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../common/my_app_bar.dart';
+import '../common/my_signedin_appbar.dart';
 import '../features/user_auth/firebase_auth/firebase_auth_services.dart';
+import 'tests/TAT/TAT_overview.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-
-  final User? user = Auth().currentUser;
-
-  Future<void> signOut() async {
-    await Auth().signOut();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +21,80 @@ class HomePage extends StatelessWidget {
             Color(0xFF9ED6FF),
             Color(0xFFC1ED9D),
           ])),
-      child: const Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: MyAppBar(),
+        body: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TATOverview()),
+                          );
+                        },
+                        child: const SizedBox(
+                          width: 300,
+                          height: 100,
+                          child: Center(child: Text('Prueba TAT')),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TATOverview()),
+                          );
+                        },
+                        child: const SizedBox(
+                          width: 300,
+                          height: 100,
+                          child: Center(child: Text('Prueba CAT-A')),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Card(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const TATOverview()),
+                          );
+                        },
+                        child: const SizedBox(
+                          width: 300,
+                          height: 100,
+                          child: Center(child: Text('Test de Rorschach')),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

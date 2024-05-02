@@ -15,7 +15,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  bool isLogin = true;
+  bool _isSigning = false;
 
   final Auth _firebaseAuth = Auth();
 
@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
           ])),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: const MyAppBar(),
+        appBar: MyAppBar(),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(60.0),
@@ -86,8 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Center(
-                              child: Text(
+                          child: Center(
+                              child: _isSigning? const CircularProgressIndicator(color: Colors.white,) : const Text(
                             'Login',
                             style: TextStyle(
                                 color: Colors.white,
@@ -128,11 +128,17 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _signIn() async {
+    setState(() {
+      _isSigning = true;
+    });
+
     String email = _emailController.text;
     String password = _passwordController.text;
 
     User? user =
         await _firebaseAuth.signInWithEmailAndPassword(email, password);
+
+    _isSigning = false;
 
     if (user != null) {
       print("User is succesfully logged in");
